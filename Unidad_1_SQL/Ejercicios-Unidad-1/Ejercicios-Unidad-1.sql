@@ -19,3 +19,21 @@ SELECT P.Titulo AS Pelicula FROM Peliculas P
 INNER JOIN [Peliculas.Plataformas] PP ON P.Id = PP.IdPelicula
 INNER JOIN Plataformas PL ON PP.IdPlataforma = PL.Id
 WHERE  PL.Id = 3
+
+
+-- 4) Obtener la Cantidad de Películas con Clasificación R. (Considerar usar el Comando LIKE)
+SELECT * FROM Clasificaciones -- ID=4
+
+-- usando LIKE
+SELECT COUNT(P.Id) AS 'Cantidad de Peliculas'
+FROM Peliculas P 
+INNER JOIN [Peliculas.Clasificaciones] PC ON P.Id = PC.IdPelicula
+INNER JOIN Clasificaciones CL ON CL.Id = PC.IdClasificacion
+WHERE CL.Descripcion LIKE 'R%'
+
+-- usando ID = 4
+SELECT COUNT(P.Id) AS 'Cantidad de Peliculas'
+FROM Peliculas P 
+INNER JOIN [Peliculas.Clasificaciones] PC ON P.Id = PC.IdPelicula
+INNER JOIN Clasificaciones CL ON CL.Id = PC.IdClasificacion
+WHERE CL.Id = 4
