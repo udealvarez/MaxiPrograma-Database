@@ -56,3 +56,13 @@ FROM Peliculas P
 INNER JOIN [Peliculas.Categorias] PC ON P.Id = PC.IdPelicula
 INNER JOIN Categorias C ON PC.IdCategoria = C.Id
 WHERE C.Id = 27
+
+
+--  Obtener la Cantidad de Actores que trabajaron en la Película 'Los Intocables'.
+SELECT * FROM Peliculas -- ID = 7
+
+SELECT COUNT(R.Id) AS 'Total de actores'
+FROM Reparto R
+INNER JOIN [Peliculas.Reparto] PR ON R.Id = PR.IdReparto
+INNER JOIN Peliculas P ON P.Id = PR.IdPelicula
+WHERE P.Id = 7
