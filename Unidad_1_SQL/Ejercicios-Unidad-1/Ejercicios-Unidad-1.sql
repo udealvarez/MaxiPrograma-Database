@@ -85,3 +85,25 @@ SELECT COUNT(Id) AS 'CANT PELICULAS' FROM Peliculas
 SELECT Nombre + ' ' + Apellido AS 'Nombre & Apellido', Email, FechaCreacion, FotoPerfilURL
 FROM Usuarios 
 WHERE Activo = 0
+
+
+
+-- CONSULTAS INSERT
+
+-- 1) Ingresar el siguiente Film.
+
+-- Película: "The Good, the Bad and the Ugly"
+-- Biografía: "Tres hombres violentos pelean por una caja que alberga 200 000 dólares, la cual fue escondida durante la Guerra Civil. Dado que ninguno puede encontrar la tumba donde está el botín sin la ayuda de los otros dos, deben colaborar, pese a odiarse."
+-- Duración: 162 minutos
+-- Fecha de Estreno: 11 de enero de 1968
+
+SELECT * FROM Peliculas
+
+-- YYYY-MM-DD
+INSERT INTO Peliculas VALUES ('1968-01-11', 'The Good, the Bad and the Ugly', 162, 'Tres hombres violentos pelean por una caja que alberga 200 000 dólares, la cual fue escondida durante la Guerra Civil. Dado que ninguno puede encontrar la tumba donde está el botín sin la ayuda de los otros dos, deben colaborar, pese a odiarse.', NULL)
+
+
+-- 12) En base al Film recientemente agregado al Catálogo, agregárselo como Favorito a Severus Snape.
+
+SELECT * FROM Usuarios -- ID = 4
+SELECT * FROM [Usuarios.Favoritos]
