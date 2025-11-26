@@ -46,3 +46,13 @@ FROM Peliculas; -- veo cuanto es el max de la pelicula
 SELECT Titulo AS Pelicula, MinutosDuracion AS Duracion
 FROM Peliculas
 WHERE MinutosDuracion = 176;   
+
+
+-- 6) Obtener las Películas de Categoría 'Superhéroes'.
+SELECT * FROM Categorias -- id = 27 -> Superhéroes
+
+SELECT P.Titulo AS Pelicula
+FROM Peliculas P
+INNER JOIN [Peliculas.Categorias] PC ON P.Id = PC.IdPelicula
+INNER JOIN Categorias C ON PC.IdCategoria = C.Id
+WHERE C.Id = 27
