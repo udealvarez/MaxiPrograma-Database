@@ -79,3 +79,9 @@ WHERE P.Id = 7
 
 -- 9) Obtener el Total de Películas del Catálogo.
 SELECT COUNT(Id) AS 'CANT PELICULAS' FROM Peliculas
+
+
+-- 10) Obtener la Lista de Usuarios Inactivos.
+SELECT Nombre + ' ' + Apellido AS 'Nombre & Apellido', Email, FechaCreacion, FotoPerfilURL
+FROM Usuarios 
+WHERE Activo = 0
