@@ -77,4 +77,5 @@ INNER JOIN Peliculas P ON PR.IdPelicula = P.Id
 WHERE P.Id = 7
 
 
-
+-- 9) Obtener el Total de Películas del Catálogo.
+SELECT COUNT(Id) AS 'CANT PELICULAS' FROM Peliculas
