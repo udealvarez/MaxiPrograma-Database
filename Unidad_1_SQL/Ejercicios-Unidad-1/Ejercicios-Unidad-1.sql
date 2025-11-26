@@ -40,7 +40,6 @@ WHERE CL.Id = 4
 
 
 -- 5) Obtener la Película que mayor duración tiene.
-
 SELECT MAX(MinutosDuracion) AS DuracionMaxima
 FROM Peliculas; -- veo cuanto es el max de la pelicula
 
