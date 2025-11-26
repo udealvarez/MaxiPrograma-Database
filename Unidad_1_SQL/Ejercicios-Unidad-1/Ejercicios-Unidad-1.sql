@@ -37,3 +37,13 @@ FROM Peliculas P
 INNER JOIN [Peliculas.Clasificaciones] PC ON P.Id = PC.IdPelicula
 INNER JOIN Clasificaciones CL ON CL.Id = PC.IdClasificacion
 WHERE CL.Id = 4
+
+
+-- 5) Obtener la Película que mayor duración tiene.
+
+SELECT MAX(MinutosDuracion) AS DuracionMaxima
+FROM Peliculas; -- veo cuanto es el max de la pelicula
+
+SELECT Titulo AS Pelicula, MinutosDuracion AS Duracion
+FROM Peliculas
+WHERE MinutosDuracion = 176;   
