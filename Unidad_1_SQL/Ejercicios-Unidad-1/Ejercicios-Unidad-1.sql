@@ -66,3 +66,15 @@ FROM Reparto R
 INNER JOIN [Peliculas.Reparto] PR ON R.Id = PR.IdReparto
 INNER JOIN Peliculas P ON P.Id = PR.IdPelicula
 WHERE P.Id = 7
+
+
+-- 8) Obtener los Actores que trabajaron en la Películas 'Los Intocables'.
+SELECT R.Nombre + ' ' + R.Apellido AS 'Nombre & Apellido', PA.Nombre AS Nacionalidad, R.FechaNacimiento AS Nacimiento
+FROM Reparto R
+INNER JOIN Paises PA ON R.IdNacionalidad = PA.Id
+INNER JOIN [Peliculas.Reparto] PR ON R.Id = PR.IdReparto
+INNER JOIN Peliculas P ON PR.IdPelicula = P.Id
+WHERE P.Id = 7
+
+
+
