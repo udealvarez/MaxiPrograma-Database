@@ -90,7 +90,7 @@ WHERE Activo = 0
 
 -- CONSULTAS INSERT
 
--- 1) Ingresar el siguiente Film.
+-- 11) Ingresar el siguiente Film.
 
 -- Película: "The Good, the Bad and the Ugly"
 -- Biografía: "Tres hombres violentos pelean por una caja que alberga 200 000 dólares, la cual fue escondida durante la Guerra Civil. Dado que ninguno puede encontrar la tumba donde está el botín sin la ayuda de los otros dos, deben colaborar, pese a odiarse."
@@ -110,3 +110,17 @@ SELECT * FROM Usuarios -- ID = 4
 SELECT * FROM [Usuarios.Favoritos] -- idpelicula | idusuario | fechafav
 
 INSERT INTO [Usuarios.Favoritos] (IdPelicula, IdUsuario, FechaFavorito) VALUES (29, 4, GETDATE())
+
+
+
+-- 13) Ahora hagamos que esta pelicula se pueda ver en las Plataformas de Netflix y Amazon.
+
+SELECT * FROM Plataformas -- ID = 1 | ID = 2
+SELECT * FROM Peliculas -- ID = 29
+SELECT * FROM [Peliculas.Plataformas]  --  idpelicula | idplataforma | fechaAlta | fechaBaja (NULL)
+
+INSERT INTO [Peliculas.Plataformas] (Id, IdPelicula, IdPlataforma, FechaAlta) VALUES (44, 29, 1, GETDATE())
+INSERT INTO [Peliculas.Plataformas] (Id, IdPelicula, IdPlataforma, FechaAlta) VALUES (45, 29, 2, GETDATE())
+
+SELECT Id, IdPelicula, IdPlataforma, FechaAlta, FechaBaja
+FROM [Peliculas.Plataformas];
