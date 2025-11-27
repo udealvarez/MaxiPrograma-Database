@@ -105,5 +105,8 @@ INSERT INTO Peliculas VALUES ('1968-01-11', 'The Good, the Bad and the Ugly', 16
 
 -- 12) En base al Film recientemente agregado al Catálogo, agregárselo como Favorito a Severus Snape.
 
+SELECT * FROM Peliculas -- ID = 29
 SELECT * FROM Usuarios -- ID = 4
-SELECT * FROM [Usuarios.Favoritos]
+SELECT * FROM [Usuarios.Favoritos] -- idpelicula | idusuario | fechafav
+
+INSERT INTO [Usuarios.Favoritos] (IdPelicula, IdUsuario, FechaFavorito) VALUES (29, 4, GETDATE())
