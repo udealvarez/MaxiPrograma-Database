@@ -124,3 +124,24 @@ INSERT INTO [Peliculas.Plataformas] (Id, IdPelicula, IdPlataforma, FechaAlta) VA
 
 SELECT Id, IdPelicula, IdPlataforma, FechaAlta, FechaBaja
 FROM [Peliculas.Plataformas];
+
+-- 14) ¿Cuál es la "relación" que tienen estas consultas al Ejecutarse? ¿Cuál es el motivo?
+
+INSERT INTO Peliculas (FechaEstreno, Titulo, MinutosDuracion, Bio, IdDirector) VALUES ('2014-08-21', 'Relatos Salvajes', 122, 'Seis relatos que alternan la intriga, la comedia y la violencia. Sus personajes se verán empujados hacia el abismo y hacia el innegable placer de perder el control al cruzar la delgada línea que separa la civilización de la barbarie.', 112);
+INSERT INTO [Peliculas.Categorias] (Id, IdCategoria, IdPelicula) VALUES (75, 6, 2);
+INSERT INTO [Peliculas.Plataformas] (IdPelicula, IdPlataforma, FechaAlta) VALUES (24, 10, '2024-03-27');
+
+-- CONSULTAS UPDATE
+
+-- 15) La Película de Rocky dejó de estar disponible en la Plataforma de Paramount+ el 16 de enero del 2024.
+SELECT * FROM Peliculas  -- rocky id = 3
+SELECT * FROM Plataformas  -- paramount id = 9
+SELECT * FROM [Peliculas.Plataformas]  -- fecha baja (es por aca)
+
+
+-- 16) Hubo un error al momento de registrar la película de Iron Man. El Protagonista no fue Robert Downey Jr., quién interpretó el papel fue Diego Peretti.
+
+-- 17) La Plataforma Tubi TV cambia de firma, dado que cambiará su nombre a MaxiPrograma TV.
+
+-- 18) La Película de Spiderman cambia su Clasificación de PG-13 a 'Apta para todos los Públicos'.
+
