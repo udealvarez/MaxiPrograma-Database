@@ -151,6 +151,33 @@ WHERE IdPelicula = 3 AND IdPlataforma = 9
 
 -- 16) Hubo un error al momento de registrar la película de Iron Man. El Protagonista no fue Robert Downey Jr., quién interpretó el papel fue Diego Peretti.
 
+SELECT Id, Titulo
+FROM Peliculas
+WHERE Titulo LIKE 'Iron%'  -- tengo el ID=2 y titulo "iron man"
+
+SELECT Id, Nombre, Apellido
+FROM Reparto
+WHERE Nombre = 'Robert' AND Apellido = 'Downey Jr.' -- id=1
+
+SELECT Id, Nombre, Apellido
+FROM Reparto
+WHERE Nombre = 'Diego' AND Apellido = 'Peretti' -- id=107
+
+UPDATE [Peliculas.Reparto] SET
+IdReparto = 107
+WHERE IdPelicula = 2 AND Protagonista = 1 AND IdReparto = 1
+
+-- VERIFICO A DIEGO PERETTI
+SELECT pr.IdPelicula, pr.IdReparto, pr.Protagonista, r.Nombre, r.Apellido
+FROM [Peliculas.Reparto] pr
+JOIN Reparto r ON r.Id = pr.IdReparto
+WHERE pr.IdPelicula = 2 AND pr.Protagonista = 1;
+
+
+
+
+
+
 -- 17) La Plataforma Tubi TV cambia de firma, dado que cambiará su nombre a MaxiPrograma TV.
 
 -- 18) La Película de Spiderman cambia su Clasificación de PG-13 a 'Apta para todos los Públicos'.
