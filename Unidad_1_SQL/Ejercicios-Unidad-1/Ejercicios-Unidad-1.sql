@@ -136,7 +136,17 @@ INSERT INTO [Peliculas.Plataformas] (IdPelicula, IdPlataforma, FechaAlta) VALUES
 -- 15) La Película de Rocky dejó de estar disponible en la Plataforma de Paramount+ el 16 de enero del 2024.
 SELECT * FROM Peliculas  -- rocky id = 3
 SELECT * FROM Plataformas  -- paramount id = 9
-SELECT * FROM [Peliculas.Plataformas]  -- fecha baja (es por aca)
+SELECT * FROM [Peliculas.Plataformas]  
+
+-- verifico la cantidad de registros -> 1 | OK
+SELECT *
+FROM [Peliculas.Plataformas]
+WHERE IdPelicula = 3 AND IdPlataforma = 9;
+
+-- rocky dejo de esta disponible en paramount
+UPDATE [Peliculas.Plataformas] SET
+FechaBaja = '2024-01-16'
+WHERE IdPelicula = 3 AND IdPlataforma = 9
 
 
 -- 16) Hubo un error al momento de registrar la película de Iron Man. El Protagonista no fue Robert Downey Jr., quién interpretó el papel fue Diego Peretti.
