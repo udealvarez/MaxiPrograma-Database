@@ -174,11 +174,12 @@ JOIN Reparto r ON r.Id = pr.IdReparto
 WHERE pr.IdPelicula = 2 AND pr.Protagonista = 1;
 
 
-
-
-
-
 -- 17) La Plataforma Tubi TV cambia de firma, dado que cambiará su nombre a MaxiPrograma TV.
+SELECT * FROM Plataformas
+
+UPDATE Plataformas SET
+Nombre = 'MaxiPrograma TV'
+WHERE Id = 10
 
 -- 18) La Película de Spiderman cambia su Clasificación de PG-13 a 'Apta para todos los Públicos'.
 
