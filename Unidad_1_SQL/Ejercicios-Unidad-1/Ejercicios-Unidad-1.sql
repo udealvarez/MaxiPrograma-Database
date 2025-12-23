@@ -144,7 +144,7 @@ FROM [Peliculas.Plataformas]
 WHERE IdPelicula = 3 AND IdPlataforma = 9;
 
 -- rocky dejo de esta disponible en paramount
-UPDATE [Peliculas.Plataformas] SET
+UPDATE [Peliculas.Plataformas] SET			-- SET es lo que voy a cambiar
 FechaBaja = '2024-01-16'
 WHERE IdPelicula = 3 AND IdPlataforma = 9
 
@@ -163,7 +163,7 @@ SELECT Id, Nombre, Apellido
 FROM Reparto
 WHERE Nombre = 'Diego' AND Apellido = 'Peretti' -- id=107
 
-UPDATE [Peliculas.Reparto] SET
+UPDATE [Peliculas.Reparto] SET			-- SET es lo que voy a cambiar
 IdReparto = 107
 WHERE IdPelicula = 2 AND Protagonista = 1 AND IdReparto = 1
 
@@ -177,9 +177,29 @@ WHERE pr.IdPelicula = 2 AND pr.Protagonista = 1;
 -- 17) La Plataforma Tubi TV cambia de firma, dado que cambiará su nombre a MaxiPrograma TV.
 SELECT * FROM Plataformas
 
-UPDATE Plataformas SET
+UPDATE Plataformas SET			-- SET es lo que voy a cambiar
 Nombre = 'MaxiPrograma TV'
 WHERE Id = 10
 
+
 -- 18) La Película de Spiderman cambia su Clasificación de PG-13 a 'Apta para todos los Públicos'.
+
+SELECT Id, Titulo FROM Peliculas WHERE Titulo LIKE 'Spid%' -- id spiderman = 12
+
+
+SELECT Id, Descripcion FROM Clasificaciones WHERE Descripcion LIKE 'PG-13%'  -- id de PG-13 = 3
+SELECT Id, Descripcion FROM Clasificaciones WHERE Descripcion LIKE '%Apta para%'   -- id apta para todo publico = 1
+
+SELECT Id FROM [Peliculas.Clasificaciones] WHERE IdPelicula = 12 AND IdClasificacion = 3  -- -> ID = 12
+
+-- CONSULTA PARA ANTES Y DESPUES DEL UPDATE MOSTRANDO EL ANTES Y DESPUES 
+SELECT P.Titulo AS Pelicula, C.Descripcion as Clasificacion
+FROM [Peliculas.Clasificaciones] PC
+JOIN Peliculas P ON P.Id = PC.IdPelicula
+JOIN Clasificaciones C ON C.Id = PC.IdClasificacion
+WHERE PC.IdPelicula = 12 
+
+UPDATE [Peliculas.Clasificaciones] SET			-- SET es lo que voy a cambiar
+IdClasificacion = 1
+WHERE IdPelicula = 12 AND IdClasificacion = 3
 
