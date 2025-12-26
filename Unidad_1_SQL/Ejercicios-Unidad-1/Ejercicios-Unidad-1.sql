@@ -214,6 +214,12 @@ DELETE FROM Usuarios WHERE Id = 3
 
 SELECT Id, Nombre, Apellido, Activo FROM Usuarios WHERE Id < 5
 
+
 -- 20) Realizar una limpieza de las Puntuaciones de las Películas. Eliminar todas las Puntuaciones desde el 2020 hasta el 2023 (inclusive). ¿Se podrá realizar la Consulta?
+
+SELECT * FROM [Peliculas.Puntuacion]
+
+DELETE FROM [Peliculas.Puntuacion] WHERE FechaPuntuacion >= '20200101' AND FechaPuntuacion <  '20240101';
+
 
 -- 21) Se debe realizar una limpieza de Películas. Hay que eliminar las Películas que se hayan estrenado desde 1980 hasta 1989 (inclusive). ¿Se podrá realizar la Consulta?
