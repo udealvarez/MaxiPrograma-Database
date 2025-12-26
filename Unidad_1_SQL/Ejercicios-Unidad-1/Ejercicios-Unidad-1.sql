@@ -203,3 +203,17 @@ UPDATE [Peliculas.Clasificaciones] SET			-- SET es lo que voy a cambiar
 IdClasificacion = 1
 WHERE IdPelicula = 12 AND IdClasificacion = 3
 
+
+-- CONSULTAS DELETE
+
+-- 19) El Usuario Homero Simpson hace mucho tiempo que está inactivo. Hay que eliminarlo de la Base de manera física.
+
+SELECT Id, Nombre FROM Usuarios WHERE Nombre LIKE '%Homero%'   -- ID = 3
+
+DELETE FROM Usuarios WHERE Id = 3
+
+SELECT Id, Nombre, Apellido, Activo FROM Usuarios WHERE Id < 5
+
+-- 20) Realizar una limpieza de las Puntuaciones de las Películas. Eliminar todas las Puntuaciones desde el 2020 hasta el 2023 (inclusive). ¿Se podrá realizar la Consulta?
+
+-- 21) Se debe realizar una limpieza de Películas. Hay que eliminar las Películas que se hayan estrenado desde 1980 hasta 1989 (inclusive). ¿Se podrá realizar la Consulta?
