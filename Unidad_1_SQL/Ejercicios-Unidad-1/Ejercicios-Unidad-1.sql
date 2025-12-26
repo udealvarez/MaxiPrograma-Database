@@ -219,7 +219,12 @@ SELECT Id, Nombre, Apellido, Activo FROM Usuarios WHERE Id < 5
 
 SELECT * FROM [Peliculas.Puntuacion]
 
-DELETE FROM [Peliculas.Puntuacion] WHERE FechaPuntuacion >= '20200101' AND FechaPuntuacion <  '20240101';
+DELETE FROM [Peliculas.Puntuacion] WHERE FechaPuntuacion >= '20200101' AND FechaPuntuacion < '20240101'
+
 
 
 -- 21) Se debe realizar una limpieza de Películas. Hay que eliminar las Películas que se hayan estrenado desde 1980 hasta 1989 (inclusive). ¿Se podrá realizar la Consulta?
+
+SELECT * FROM Peliculas
+
+DELETE FROM Peliculas WHERE FechaEstreno >= '19800101' AND FechaEstreno < '19900101'
