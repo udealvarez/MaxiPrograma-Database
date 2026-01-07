@@ -1,0 +1,39 @@
+USE CatalogoWebDB
+GO 
+
+CREATE TABLE USERS(
+	Id INT PRIMARY KEY,
+	Email NVARCHAR(100),
+	Passwprd NVARCHAR(100),
+	Nombre NVARCHAR(50),
+	Apellido NVARCHAR(50),
+	UrlImagenPerfil NVARCHAR(100),
+	EsAdmin BIT
+);
+
+CREATE TABLE MARCAS(
+	Id INT PRIMARY KEY,
+	Descripcion NVARCHAR(100)
+);
+
+CREATE TABLE CATEGORIAS(
+	Id INT PRIMARY KEY,
+	Descripcion NVARCHAR(100)
+);
+
+CREATE TABLE ARTICULOS(
+	Id INT PRIMARY KEY,
+	Codigo INT,
+	Nombre NVARCHAR(50),
+	Descripcion NVARCHAR(100),
+	IdMarca INT,
+	IdCategoria INT,
+	ImagenUrl NVARCHAR(100),
+	Precio DECIMAL(5, 2)
+);
+
+CREATE TABLE FAVORITOS(
+	Id INT PRIMARY KEY,
+	IdUser INT,
+	IdArticulo INT
+);

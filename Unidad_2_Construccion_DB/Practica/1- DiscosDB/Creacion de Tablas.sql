@@ -1,0 +1,22 @@
+USE DiscosDB
+GO
+
+CREATE TABLE TIPOSEDICION(
+	Id INT PRIMARY KEY,
+	Descripcion NVARCHAR(100)
+)
+
+CREATE TABLE ESTILOS(
+	Id INT PRIMARY KEY,
+	Descripcion NVARCHAR(100)
+)
+
+CREATE TABLE DISCOS(
+	Id INT PRIMARY KEY,
+	Titulo NVARCHAR(50),
+	FechaLanzamiento DATE,
+	CantidadCanciones INT,
+	UrlImagenTapa NVARCHAR(100),
+	IdEstilo INT,
+	IdTipoEdicion INT
+)
