@@ -21,11 +21,12 @@ Apuntes, ejercicios y prácticas del curso “Bases de Datos [Nivel Universidad]
 
 | Unidad | Estado |
 |-------|--------|
-| 01 – Introducción a SQL | ⏳ En progreso |
-| 02 – Construcción de Bases de Datos | ❌ Pendiente |
-| 03 – Diseño de Bases de Datos | ❌ Pendiente |
+| 01 – Introducción a SQL | ✅ Completada |
+| 02 – Construcción de Bases de Datos | ✅ Completada |
+| 03 – Diseño de Bases de Datos | ⏳ En progreso |
 | 04 – SQL 2 | ❌ Pendiente |
 | 05 – Optimización DBs | ❌ Pendiente |
+
 
 ---
 
@@ -42,8 +43,7 @@ Apuntes, ejercicios y prácticas del curso “Bases de Datos [Nivel Universidad]
 - Restauración de DB  
 - Prácticas iniciales
 
-### Notas personales
-_(completalas cuando avances)_
+
 
 ---
 
